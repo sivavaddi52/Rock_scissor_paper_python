@@ -1,0 +1,46 @@
+################Create the Rock Scissors paper game##############
+1.import the random library
+
+import random
+
+2.create get choice function
+
+def get_choice():
+  player_choice=input("Enter your choice(rock,paper,scissors):")
+  options=['rock','paper','scissors']
+  computer_choice=random.choice(options)
+  choices={'player':player_choice,'computer':computer_choice}
+  return choices
+
+3.create the winning function
+
+def wining(player,computer):
+  print(f"You chose: {player}, Computer chose: {computer}")
+  if player == computer:
+    return "It is Tie!"
+  elif player =='paper':
+    if computer == 'scissors':
+      return "Scissor cuts the paper! You Lose."
+    else:
+      return "Paper smasshes the rock! You win."
+  elif player == 'rock':
+    if computer == 'scissors':
+      return "Rock smasshes the scissors! You win."
+    else:
+      return "Paper smasshes the Rock! You Lose."
+  elif player == 'paper':
+    if computer == 'scissors':
+      return "scissors cuts the paper! You Lose."
+    else:
+      return "Paper smasshes the rock! You win"
+  else :
+    return "Invlalid option! Enter valid option"
+
+choices = get_choice()
+result = wining(choices['player'],choices['computer'])
+print(result)
+
+RESULT:-
+Enter your choice(rock,paper,scissors):asdfg
+You chose: asdfg, Computer chose: scissors
+Invlalid option! Enter valid option
